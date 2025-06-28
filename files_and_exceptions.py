@@ -41,3 +41,9 @@ def process_dict(diccionario):
             total = total + monto
         promedio = total / len(montos)
         print(producto + ": ventas totales $" + str(round(total, 2)) + ", promedio $" + str(round(promedio, 2)))
+nombre = input("Ingrese el nombre del archivo: ")
+ventas = read_file_to_dict(nombre)
+
+if ventas != {}:
+    print("Resumen de ventas:")
+    process_dict(ventas)
