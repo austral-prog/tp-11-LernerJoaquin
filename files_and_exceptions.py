@@ -29,14 +29,8 @@ def read_file_to_dict(nombre_archivo):
 
 
 def process_dict(diccionario_ventas):
-    for producto, montos in diccionario_ventas.items():
+    for producto in sorted(diccionario_ventas.keys()):
+        montos = diccionario_ventas[producto]
         total = sum(montos)
-        promedio = total / len(montos) if montos else 0
+        promedio = total / len(montos)
         print(f"{producto}: ventas totales ${total:.2f}, promedio ${promedio:.2f}")
-
-archivo = input("Ingrese el nombre del archivo de ventas: ")
-
-ventas_dict = read_file_to_dict(archivo)
-
-if ventas_dict:
-    process_dict(ventas_dict)
