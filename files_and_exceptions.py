@@ -1,15 +1,12 @@
 def read_file_to_dict(nombre_archivo):
     ventas_por_producto = {}
-
     try:
         with open(nombre_archivo, 'r') as archivo:
             linea = archivo.readline().strip()
             if not linea:
                 print("El archivo está vacío.")
                 return {}
-
-            ventas = linea.split(';')
-
+                ventas = linea.split(';')
             for venta in ventas:
                 if venta:  # Ignora cadenas vacías
                     try:
@@ -20,12 +17,12 @@ def read_file_to_dict(nombre_archivo):
                         else:
                             ventas_por_producto[producto] = [valor]
                     except ValueError:
-                        print(f"Error de formato en la venta: {venta}")
+                        print(f"Error en el formato de venta: '{venta}' (ignorado)")
     except FileNotFoundError:
         print(f"Error: el archivo '{nombre_archivo}' no existe.")
         return {}
+return ventas_por_producto
 
-    return ventas_por_producto
 
 
 def process_dict(diccionario_ventas):
