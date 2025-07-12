@@ -1,7 +1,9 @@
 def process_dict(data):
     """Para cada producto, imprime el total de ventas y el promedio, en el orden natural del diccionario.
+
     :param data: dict - diccionario a procesar.
-    :return: None"""
+    :return: None
+    """
     suma = 0
     divicion = 0
     for producto in data.keys():
