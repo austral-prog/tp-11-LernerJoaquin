@@ -1,8 +1,7 @@
 import csv
 def read_file_to_dict(filename):
     """Lee un archivo de ventas donde cada venta es producto:valor_de_venta;... y agrupa los valores por producto en una lista.
-
-    :param filename: str - nombre del archivo a leer.
+:param filename: str - nombre del archivo a leer.
     :return: dict - diccionario con listas de montos por producto.
     :raises: FileNotFoundError - si el archivo no existe.
     """
