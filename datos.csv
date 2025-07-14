@@ -1,4 +1,10 @@
+import csv
 def read_file_to_dict(filename):
+    """Lee un archivo de ventas donde cada venta es producto:valor_de_venta;... y agrupa los valores por producto en una lista.
+:param filename: str - nombre del archivo a leer.
+:return: dict - diccionario con listas de montos por producto.
+:raises: FileNotFoundError - si el archivo no existe.
+"""
     try:
         with open(filename, "r") as file:
             reader = csv.reader(file, delimiter=";")
@@ -25,7 +31,8 @@ def read_file_to_dict(filename):
                 val = ""
                 caso = 0
         for i in range(len(keys)):
-                    if keys[i] in diccionario:
+
+            if keys[i] in diccionario:
                 diccionario[keys[i]].append(float(vals[i]))
             else:
                 diccionario[keys[i]] = list()
