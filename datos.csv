@@ -31,8 +31,7 @@ def read_file_to_dict(filename):
                 val = ""
                 caso = 0
         for i in range(len(keys)):
-
-            if keys[i] in diccionario:
+                if keys[i] in diccionario:
                 diccionario[keys[i]].append(float(vals[i]))
             else:
                 diccionario[keys[i]] = list()
